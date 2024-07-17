@@ -57,15 +57,16 @@ export default function Home() {
       <main className="flex flex-col min-h-[75vh] mx-auto justify-center items-center w-full p-4">
         <div className="max-w-4xl w-full">
           <h6 className="text-[36px] font-rajdhani font-medium leading-none">
-            ANON AADHAAR
+            USING ANON AADHAAR
           </h6>
           <h2 className="text-[90px] font-rajdhani font-medium leading-none">
-            EXAMPLE VOTING APP
+            Government Subsidies
           </h2>
           <div className="text-md mt-4 mb-8 text-[#717686]">
-            This process ensures anonymity by utilizing the Aadhaar secure QR
-            code (present on e-Aadhaar and the printed Aadhaar letter) which
-            preserves the confidentiality of the Aadhaar number.
+            Get the State Government Subsidies by proving your state eligibility
+            without disclosing your Aadhaar number. This process ensures
+            anonymity by utilizing the Aadhaar secure which preserves the
+            confidentiality.
           </div>
 
           <div className="flex w-full gap-8 mb-8">
