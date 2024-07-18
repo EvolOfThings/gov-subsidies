@@ -27,7 +27,7 @@ const LaunchMode = ({
         fieldsToReveal={[
         'revealAgeAbove18',
         'revealGender',
-        'revealPinCode',
+        // 'revealPinCode',
         'revealState',
       ]}
         buttonStyle={{
@@ -48,40 +48,40 @@ const LaunchMode = ({
 };
 
 export default function Subsidy() {
-  const [anonAadhaar] = useAnonAadhaar();
+//   const [anonAadhaar] = useAnonAadhaar();
   const { setIsTestMode } = useContext(AppContext);
   const { isConnected, address } = useAccount();
   const { open } = useWeb3Modal();
-  const router = useRouter();
+//   const router = useRouter();
 
-  useEffect(() => {
+//   useEffect(() => {
     // if (anonAadhaar.status === "logged-in") {
     //   router.push("./vote");
     // }
-    if(isConnected){
-      router.push('/')
-    }  else if(isConnected && anonAadhaar.status === "logged-in"){
-      router.push('/')
-    }
-  }, [anonAadhaar, router]);
+//     if(isConnected){
+//       router.push('/')
+//     }  else if(isConnected && anonAadhaar.status === "logged-in"){
+//       router.push('/')
+//     }
+//   }, [anonAadhaar, router]);
 
  
   return (
     <>
       <main className="flex flex-col min-h-[75vh] mx-auto justify-center items-center w-full p-4">
         <div className="max-w-4xl w-full">
-          <h6 className="text-[36px] font-rajdhani font-medium leading-none">
+          {/* <h6 className="text-[36px] font-rajdhani font-medium leading-none">
             USING ANON AADHAAR
-          </h6>
+          </h6> */}
           <h2 className="text-[90px] font-rajdhani font-medium leading-none">
             Government Subsidies
           </h2>
           <div className="text-md mt-4 mb-8 text-[#717686]">
-            Get the State Government Subsidies by proving your state eligibility
-            without disclosing your Aadhaar number. This process ensures
-            anonymity by utilizing the Aadhaar secure which preserves the
-            confidentiality.
+           Check your eligibility for the government subsidies
           </div>
+
+          {/* TODO: form to select state or central subsidies */}
+
 
           <div className="flex w-full gap-8 mb-8">
 
@@ -93,7 +93,7 @@ export default function Subsidy() {
                     setIsTestMode={setIsTestMode}
                     address={address as string}
                   /> */}
-
+                 
                   {/* TODO: this will go into dirrefct page, after getting the proof and selecting the scheme */}
                   <LaunchMode
                     isTest={true}

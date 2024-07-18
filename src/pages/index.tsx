@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useAnonAadhaar } from "@anon-aadhaar/react";
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useAccount } from "wagmi";
-import { AppContext } from "./_app";
+// import { AppContext } from "./_app";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 
 export default function Home() {
   const [anonAadhaar] = useAnonAadhaar();
-  const { setIsTestMode } = useContext(AppContext);
+  // const { setIsTestMode } = useContext(AppContext);
   const { isConnected, address } = useAccount();
   const { open } = useWeb3Modal();
   const router = useRouter();
@@ -16,13 +16,13 @@ export default function Home() {
   useEffect(() => {
 
     if(isConnected){
-      router.push('/')
+      router.push('/subsidy')
     }  else if(isConnected && anonAadhaar.status === "logged-in"){
       router.push('/eligibility')
     }
   }, [anonAadhaar, router, isConnected]);
 
-  const handleQRModal = () => {
+  const handleExploreSubsidy = () => {
     router.push('/subsidy');
   }
 
@@ -51,9 +51,9 @@ export default function Home() {
                 <div className="flex gap-4 place-content-center">
               <button
                 className="bg-[#009A08] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
-                onClick={() => handleQRModal}
+                onClick={() => handleExploreSubsidy}
               >
-                Continue to upload Aadhar QR code
+                Explore Subsidy
               </button>
 
 
