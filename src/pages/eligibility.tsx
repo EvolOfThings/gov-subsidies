@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   convertBigIntToByteArray,
-  decompressByteArray,
   deserialize,
 } from "@anon-aadhaar/core";
 import { useAnonAadhaar } from "@anon-aadhaar/react";
@@ -9,10 +8,12 @@ import { useAccount } from "wagmi";
 import { useEffect } from "react";
 import SubsidiesEligibility from '../components/SubsidiesEligibility';
 import { EligibilityCriteria } from '../subsidyData';
+import { useWeb3Modal } from '@web3modal/wagmi/react';
 
 const Eligibility: React.FC = () => {
   const [anonAadhaar] = useAnonAadhaar();
-  const { isConnected, address } = useAccount();
+  const { isConnected } = useAccount();
+  const { open } = useWeb3Modal();
   const [userAadhaarData, setUserAadhaarData] = useState<EligibilityCriteria>();
   const [aadhaarState, setAadhaarState] = useState<string>("");
 
@@ -52,8 +53,7 @@ return (
     )}
 
     {!isConnected && (
-      <button
-        disabled={true}
+      <button onClick={() => open()}
         type="button"
         className="rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300"
       >

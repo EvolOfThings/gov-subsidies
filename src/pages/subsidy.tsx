@@ -6,10 +6,6 @@ import { useAccount } from "wagmi";
 import { AppContext } from "./_app";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
 
-// This is a trick to enable having both modes in under the same page.
-// This could be removed and only the <LaunchProveModal /> could be displayed.
-
-// pass fieldsToReveal to <LaunchProveModal /> to get fields
 const LaunchMode = ({
   isTest,
   setIsTestMode,
@@ -27,7 +23,6 @@ const LaunchMode = ({
         fieldsToReveal={[
         'revealAgeAbove18',
         'revealGender',
-        // 'revealPinCode',
         'revealState',
       ]}
         buttonStyle={{
@@ -48,31 +43,23 @@ const LaunchMode = ({
 };
 
 export default function Subsidy() {
-//   const [anonAadhaar] = useAnonAadhaar();
   const { setIsTestMode } = useContext(AppContext);
   const { isConnected, address } = useAccount();
   const { open } = useWeb3Modal();
-//   const router = useRouter();
+  const [anonAadhaar] = useAnonAadhaar();
+  const router = useRouter();
 
-//   useEffect(() => {
-    // if (anonAadhaar.status === "logged-in") {
-    //   router.push("./vote");
-    // }
-//     if(isConnected){
-//       router.push('/')
-//     }  else if(isConnected && anonAadhaar.status === "logged-in"){
-//       router.push('/')
-//     }
-//   }, [anonAadhaar, router]);
+useEffect(() => {
+  if(anonAadhaar.status === "logged-in"){
+    router.push('/eligibility')
+  }  
+}, [anonAadhaar, router]);
 
  
   return (
     <>
       <main className="flex flex-col min-h-[75vh] mx-auto justify-center items-center w-full p-4">
         <div className="max-w-4xl w-full">
-          {/* <h6 className="text-[36px] font-rajdhani font-medium leading-none">
-            USING ANON AADHAAR
-          </h6> */}
           <h2 className="text-[90px] font-rajdhani font-medium leading-none">
             Government Subsidies
           </h2>
@@ -80,35 +67,16 @@ export default function Subsidy() {
            Check your eligibility for the government subsidies
           </div>
 
-          {/* TODO: form to select state or central subsidies */}
-
-
           <div className="flex w-full gap-8 mb-8">
 
             {isConnected ? (
               <div>
                 <div className="flex gap-4 place-content-center">
-                  {/* <LaunchMode
-                    isTest={false}
-                    setIsTestMode={setIsTestMode}
-                    address={address as string}
-                  /> */}
-                 
-                  {/* TODO: this will go into dirrefct page, after getting the proof and selecting the scheme */}
                   <LaunchMode
                     isTest={true}
                     setIsTestMode={setIsTestMode}
                     address={address as string}
                   />
-
-              {/* <button
-                className="bg-[#009A08] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
-                onClick={() => open()}
-              >
-                Explore
-              </button> */}
-
-
                 </div>
               </div> ) 
             

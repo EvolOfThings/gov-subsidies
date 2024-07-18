@@ -1,6 +1,6 @@
 export type EligibilityCriteria = {
     ageAbove18?: boolean;
-    gender?: 'male' | 'female' | 'other';
+    gender?: 'M' | 'F' | 'O';
     state: string;
   };
   
@@ -22,12 +22,12 @@ export function generateSubsidies(state: string): Subsidy[] {
         description: "Monthly financial assistance for women.",
         eligibility: {
           state: state,
-          gender: "female"
+          gender: "F"
         }
       },
       {
-        name: "Senior Pension",
-        description: "Monthly pension for senior citizens above 60.",
+        name: "Pension",
+        description: "You maybe eligible for a Monthly pension for senior citizens above 60.",
         eligibility: {
           state: state,
           ageAbove18: true
@@ -35,14 +35,4 @@ export function generateSubsidies(state: string): Subsidy[] {
       },
     ];
   }
-  
-
-  
-//   example
-//   const sikkimSubsidies: StateSubsidies = {
-//     state: "Sikkim",
-//     subsidies: generateSubsidies("Sikkim")
-//   };
-  
-//   console.log(sikkimSubsidies);
   

@@ -13,8 +13,8 @@ export default function Home() {
   const { open } = useWeb3Modal();
   const router = useRouter();
 
+  
   useEffect(() => {
-
     if(isConnected){
       router.push('/subsidy')
     }  else if(isConnected && anonAadhaar.status === "logged-in"){
@@ -25,7 +25,6 @@ export default function Home() {
   const handleExploreSubsidy = () => {
     router.push('/subsidy');
   }
-
  
   return (
     <>
@@ -43,9 +42,7 @@ export default function Home() {
             anonymity by utilizing the Aadhaar secure which preserves the
             confidentiality.
           </div>
-
           <div className="flex w-full gap-8 mb-8">
-
             {isConnected ? (
               <div>
                 <div className="flex gap-4 place-content-center">
@@ -55,12 +52,8 @@ export default function Home() {
               >
                 Explore Subsidy
               </button>
-
-
                 </div>
               </div> ) 
-            
-            
             : (
               <button
                 className="bg-[#009A08] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
