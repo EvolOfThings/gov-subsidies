@@ -43,11 +43,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Govt Subsidies</title>
         <meta property="og:title" content="govt-subsidies" key="title" />
-        {/* <meta
-          property="og:image"
-          content="https://anon-aadhaar-example.vercel.app/AnonAadhaarBanner.png"
-          key="image"
-        /> */}
         <meta
           property="og:description"
           name="description"
