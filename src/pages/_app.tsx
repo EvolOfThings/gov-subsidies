@@ -43,15 +43,15 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Govt Subsidies</title>
         <meta property="og:title" content="govt-subsidies" key="title" />
-        <meta
+        {/* <meta
           property="og:image"
           content="https://anon-aadhaar-example.vercel.app/AnonAadhaarBanner.png"
           key="image"
-        />
+        /> */}
         <meta
           property="og:description"
           name="description"
-          content="Get Government subsidies with Anon Aadhaar"
+          content="Check Government subsidies with Anon Aadhaar"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -67,7 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <WagmiProvider config={wagmiConfig}>
             <QueryClientProvider client={queryClient}>
               <AnonAadhaarProvider>
-                <div className="relative min-h-screen flex flex-col justify-between">
+                <div className="relative min-h-screen flex flex-col justify-between bg-gradient-to-t from-indigo-900 to-indigo-600">
                   <div className="flex-grow">
                     <Header />
                     <Component {...pageProps} />

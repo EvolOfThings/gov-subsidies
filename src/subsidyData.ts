@@ -18,16 +18,40 @@ export  type StateSubsidies = {
 export function generateSubsidies(state: string): Subsidy[] {
     return [
       {
-        name: "Women's Financial Assistance",
-        description: "Monthly financial assistance for women.",
+        name: "Healthcare Subsidy for Women",
+        description: "Reduced healthcare costs for women.",
         eligibility: {
           state: state,
           gender: "F"
         }
       },
       {
-        name: "Pension",
-        description: "You maybe eligible for a Monthly pension for senior citizens above 60.",
+        name: 'Maternity Benefit Scheme',
+        description: 'Financial support for pregnant women.',
+        eligibility: {
+          state: state,
+          gender: "F"
+        }
+      },
+      {
+        name: 'Women Empowerment Subsidy',
+        description: 'Support for women-led businesses.',
+        eligibility: {
+          state: state,
+          gender: "F"
+        }
+      },
+      {
+        name: "Pension for Senior Citizens",
+        description: "Regular income support for the elderly. If you are over 60, you are eligible for this.",
+        eligibility: {
+          state: state,
+          ageAbove18: true
+        }
+      },
+      {
+        name: "Elderly Nutrition Program",
+        description: "Nutritional aid for the elderly. If you are over 60, you are eligible for this.",
         eligibility: {
           state: state,
           ageAbove18: true

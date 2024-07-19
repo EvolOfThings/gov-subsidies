@@ -35,7 +35,7 @@ const LaunchMode = ({
           color: "#009A08",
           fontFamily: "rajdhani",
         }}
-        buttonTitle={isTest ? "USE TEST CREDENTIALS" : "USE REAL CREDENTIALS"}
+        buttonTitle={isTest ? "UPLOAD AADHAAR QR" : "USE REAL CREDENTIALS"}
         useTestAadhaar={isTest}
       />
     </span>
@@ -59,19 +59,19 @@ useEffect(() => {
   return (
     <>
       <main className="flex flex-col min-h-[75vh] mx-auto justify-center items-center w-full p-4">
-        <div className="max-w-4xl w-full">
-          <h2 className="text-[90px] font-rajdhani font-medium leading-none">
+        <div className="max-w-4xl w-full justify-center items-center">
+          <h2 className="text-7xl font-sans text-center font-semibold text-blue-950 leading-none pb-4">
             Government Subsidies
           </h2>
-          <div className="text-md mt-4 mb-8 text-[#717686]">
-           Check your eligibility for the government subsidies
-          </div>
+          <p className="text-2xl text-center font-sans mt-10 mb-2  text-slate-900">
+           Please upload your Aadhar QR code to see your eligibility
+          </p>
 
-          <div className="flex w-full gap-8 mb-8">
+          <div className="flex w-full gap-8 mb-8 justify-center">
 
             {isConnected ? (
               <div>
-                <div className="flex gap-4 place-content-center">
+                <div className="flex gap-4 place-content-center mt-4">
                   <LaunchMode
                     isTest={true}
                     setIsTestMode={setIsTestMode}
@@ -83,10 +83,10 @@ useEffect(() => {
             
             : (
               <button
-                className="bg-[#009A08] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
+                className="bg-blue-950 rounded-lg px-10 py-4 mt-10 hover:bg-black  text-white font-rajdhani font-medium"
                 onClick={() => open()}
               >
-                YOU MUST BE CONNECTED TO CONTINUE
+                Please connect your wallet
               </button>
             )}
           </div>

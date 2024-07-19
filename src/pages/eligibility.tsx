@@ -10,6 +10,7 @@ import SubsidiesEligibility from '../components/SubsidiesEligibility';
 import { EligibilityCriteria } from '../subsidyData';
 import { useWeb3Modal } from '@web3modal/wagmi/react';
 
+
 const Eligibility: React.FC = () => {
   const [anonAadhaar] = useAnonAadhaar();
   const { isConnected } = useAccount();
@@ -46,8 +47,7 @@ const Eligibility: React.FC = () => {
   }, [anonAadhaar]);
 
 return (
-  <div className="min-h-screen flex items-center justify-center bg-gray-100">
-
+  <div className="min-h-screen flex items-center justify-center bg-contain bg-no-repeat bg-center bg-[url('../../public/assets/govSubsidyLogo.svg')]">
     {isConnected && userAadhaarData && (
       <SubsidiesEligibility state={aadhaarState} userCriteria={userAadhaarData} />
     )}

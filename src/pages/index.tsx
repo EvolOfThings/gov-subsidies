@@ -13,7 +13,7 @@ export default function Home() {
   const { open } = useWeb3Modal();
   const router = useRouter();
 
-  
+
   useEffect(() => {
     if(isConnected){
       router.push('/subsidy')
@@ -28,21 +28,19 @@ export default function Home() {
  
   return (
     <>
-      <main className="flex flex-col min-h-[75vh] mx-auto justify-center items-center w-full p-4">
-        <div className="max-w-4xl w-full">
-          <h6 className="text-[36px] font-rajdhani font-medium leading-none">
-            USING ANON AADHAAR
-          </h6>
-          <h2 className="text-[90px] font-rajdhani font-medium leading-none">
+      <main className="flex flex-col min-h-[75vh] mx-auto justify-center items-center w-full p-4 ">
+        <div className="max-w-5xl w-full">
+          <h2 className="text-8xl font-sans font-semibold text-blue-950 leading-none pb-4 mb-10">
             Government Subsidies
           </h2>
-          <div className="text-md mt-4 mb-8 text-[#717686]">
-            Get the State Government Subsidies by proving your state eligibility
-            without disclosing your Aadhaar number. This process ensures
-            anonymity by utilizing the Aadhaar secure which preserves the
-            confidentiality.
-          </div>
-          <div className="flex w-full gap-8 mb-8">
+          <p className="text-[26px] font-rajdhani font-medium leading-none">
+            USING ANON AADHAAR
+          </p>
+          <p className="text-3xl font-sans mt-10 mb-8 text-slate-900">
+            Check Government Subsidies by proving your Indian nationality
+            without disclosing your Aadhaar number. 
+          </p>
+          <div className="flex w-full gap-8 mb-8 justify-center">
             {isConnected ? (
               <div>
                 <div className="flex gap-4 place-content-center">
@@ -56,7 +54,7 @@ export default function Home() {
               </div> ) 
             : (
               <button
-                className="bg-[#009A08] rounded-lg text-white px-6 py-1 font-rajdhani font-medium"
+                className="bg-blue-950 rounded-lg text-lg text-white px-10 py-4 font-rajdhani font-medium mt-8 hover:bg-black"
                 onClick={() => open()}
               >
                 CONNECT WALLET
