@@ -11,7 +11,6 @@ import {
 import imgGithub from "../../public/github-mark.png";
 import Image from "next/image";
 import { AppContext } from "@/pages/_app";
-import { shortenAddress } from "@/utils";
 import { icons } from "../styles/illustrations";
 import { Toaster } from "./Toaster";
 
@@ -47,12 +46,12 @@ export const Footer: FunctionComponent<FooterProps> = ({
 
           <div className="flex flex-row justify-center items-center gap-8">
             <p className="text-lg text-black font-rajdhani font-medium underline">
-              {shortenAddress("0x" + contractAddr?.toUpperCase())}
+              Gov Subsidies
             </p>
             <a
               target={"_blank"}
               rel={"noreferrer"}
-              href="https://github.com/privacy-scaling-explorations/anon-aadhaar"
+              href="https://github.com/EvolOfThings/gov-subsidies"
             >
               <Image
                 alt="github"
