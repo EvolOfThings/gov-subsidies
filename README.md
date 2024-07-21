@@ -6,6 +6,9 @@ Anon Aadhaar is a zero-knowledge protocol designed to enable Aadhaar citizens to
 
 This project shows how Indian nationals can check the government subsidies available to them through ZK verified proofs. The user can verify his/her Indian nationality without disclosing the Aadhaar number.
 
+## Demo
+You can watch the Demo [here](https://www.loom.com/share/ac8524690e2942388f312e95f5f22614?sid=92738491-bff9-4512-bf9f-039787bdee74)
+
 
 ## Getting Started
 You can fork/clone it.
@@ -23,6 +26,8 @@ yarn install
 ```bash
 yarn dev
 ```
+
+
 
 
 
